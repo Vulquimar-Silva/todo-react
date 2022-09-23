@@ -1,0 +1,200 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: #0D0D0D;
+  padding: 14px;
+}
+
+.logo {
+  margin-top: 48px;
+  min-height: 8%;
+  min-width: 8%;
+}
+
+
+.form {
+  min-width: 50%;
+  display: flex;
+  flex-direction: initial;
+  margin-top: 36px;
+  margin-bottom: -35px;
+
+  input {
+    flex: 1;
+    height: 56px;
+    background-color: var(--gray-600);
+    border-color: #262626;
+    border-radius: 5px;
+    border-width: 1;
+    color: #FFF;
+    padding: 16px;
+    font-size: 16px;
+    margin-right: 10px;
+  }
+
+  button {
+    color: var(--white);
+    width: 85px;
+    border-radius: 5px;
+    border: none;
+    background-color: #1E6F9F;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    span {
+      margin-left: -18px;
+    }
+  }
+
+  .alignIconBtn{
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    height: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 15px;
+    display: block;
+  }
+}
+
+.alignStatusLine{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.statusTasks {
+  display: flex;
+  width: 50%;
+  margin-top: 100px;
+
+  justify-content: space-between;
+  align-items: center;
+
+  .textCreate {
+    display: flex;
+    color: var(--blue-400);
+
+    .numberTaskAccountCompleted {
+      color: #FFF;
+      width: 25px;
+      border-radius: 50px;
+      background-color: #333333;
+      margin-left: 5px;
+      text-align: center;
+    }
+  }
+
+  .ifCompleted {
+    max-width: 180px;
+    color: #FFF;
+    border-radius: 50px;
+    background-color: #333333;
+    margin-left: 5px;
+    text-align: center;
+  }
+
+  .textConcluded {
+    display: flex;
+    color: var(--purple-400);
+
+    .numberTaskAccountCreated {
+      color: #FFF;
+      width: 25px;
+      border-radius: 50px;
+      background-color: #333333;
+      margin-left: 5px;
+      text-align: center;
+    }
+  }
+}
+
+.textModal {
+  text-align: center;
+  color: var(--gray-200)
+}
+
+.noList {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 90px;
+
+  .clipboard {
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+  .listTaskText1 {
+    color: #808080;
+    font-size: 15px;
+    text-align: center
+}
+
+  .listTaskText2 {
+    color: #6B6B6B;
+    font-size: 15px;
+    text-align: center;
+  }
+}
+
+.linha-horizontal {
+  margin-top: 30px;
+  width: 50%;
+  border-radius: 1;
+  border-width: 1;
+  border: 0.5px solid var(--gray-600);
+}
+
+.listItem {
+  min-width: 50%;
+
+  label{
+    color: var(--gray-100);
+  }
+
+  input {
+    margin-right: 10px;
+  }
+
+  input[type=checkbox] {
+    position: relative;
+    cursor: pointer;
+  }
+
+  input[type=checkbox]:checked ~ label {
+    text-decoration: line-through;
+    color: var(--gray-400);
+  }
+
+  i {
+    cursor: pointer;
+  }
+}
+
+.checkbox {
+  width: 20px;
+  height: 17px;
+  bottom: -4px;
+}
+
+.todo-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4px auto;
+  color: #fff;
+  background: var(--gray-600);
+
+  padding: 15px;
+  border-radius: 5px;
+  width: 100%;
+  margin-top: 20px;
+}
