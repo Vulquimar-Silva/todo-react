@@ -1,7 +1,6 @@
-import {Home} from './pages/Home';
+import { Home } from './pages/Home';
 
 import "./assets/sass/global.scss";
-
 
 export function App() {
 

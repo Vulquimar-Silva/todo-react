@@ -3,22 +3,21 @@ import { BsPlusCircle } from "react-icons/bs";
 import { v4 as uuidv4 } from 'uuid';
 import Modal from 'react-modal';
 
+import { Modals } from '../../components/Modals';
+
 import imgLogo from '../../assets/img/png/Logo.png';
 import imgClipboard from '../../assets/img/png/Clipboard.png';
 import imgTrash from '../../assets/img/png/Trash.png';
-import closeImg from '../../assets/img/svg/close.svg';
-
-import { emojis } from '../../utils/emojis'
 
 import "./styles.scss";
-
-Modal.setAppElement("#root")
 
 interface Tasks {
   id: number | string;
   title: string;
   isCompleted: boolean;
 }
+
+Modal.setAppElement("#root")
 
 export function Home() {
 
@@ -29,7 +28,7 @@ export function Home() {
   function handleTaskAdd() {
 
     if ((newTask) === "") {
-      return handleOpenModalEnterATask()
+      return handleOpenModal()
     }
 
     const newTasks: Tasks = {
@@ -52,8 +51,6 @@ export function Home() {
     setTask(newTasks);
   }
 
-  const sortEmojis = emojis[Math.floor(Math.random() * emojis.length)]
-
   const countTaskCompleted = task.filter(task => task.isCompleted).length
   const countTaskCreated = task.map((item: any) => {
     if (item === 0) {
@@ -65,11 +62,11 @@ export function Home() {
 
   const handleTaskRemove = (nameTask: any) => setTask(prevState => prevState.filter(task => task !== nameTask))
 
-  function handleOpenModalEnterATask() {
+  function handleOpenModal() {
     setIsOpenEmpty(true);
   }
 
-  function handleCloseModalEnterATask() {
+  function handleCloseModal() {
     setIsOpenEmpty(false);
   }
 
@@ -89,25 +86,7 @@ export function Home() {
             <BsPlusCircle className='alignIconBtn' />
           </button>
         </div>
-
-        <Modal
-          isOpen={modalIsOpenEmpty}
-          onRequestClose={handleCloseModalEnterATask}
-          overlayClassName='react-modal-overlay'
-          className='react-modal-content'
-        >
-          <h3 className='textModal'>
-            {sortEmojis}
-          </h3>
-          <button
-            type="button"
-            onClick={handleCloseModalEnterATask}
-            className='react-modal-close'
-          >
-            <img src={closeImg} alt="Fechar Modal" />
-          </button>
-        </Modal>
-
+        <Modals isOpen={modalIsOpenEmpty} onRequestClose={handleCloseModal} />
       </header>
 
       <div className="alignStatusLine">
