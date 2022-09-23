@@ -13,24 +13,22 @@ export function Modals({ isOpen, onRequestClose }: ActionsModals) {
   const sortEmojis = emojis[Math.floor(Math.random() * emojis.length)]
 
   return (
-    <section>
-      <Modal
-        isOpen={isOpen}
-        onRequestClose={onRequestClose}
-        overlayClassName='react-modal-overlay'
-        className='react-modal-content'
+    <Modal
+      isOpen={isOpen}
+      onRequestClose={onRequestClose}
+      overlayClassName='react-modal-overlay'
+      className='react-modal-content'
+    >
+      <span className='textModal'>
+        {sortEmojis}
+      </span>
+      <button
+        type="button"
+        onClick={onRequestClose}
+        className='react-modal-close'
       >
-        <span className='textModal'>
-          {sortEmojis}
-        </span>
-        <button
-          type="button"
-          onClick={onRequestClose}
-          className='react-modal-close'
-        >
-          <img src={closeImg} alt="Fechar Modal" />
-        </button>
-      </Modal>
-    </section>
+        <img src={closeImg} alt="Fechar Modal" />
+      </button>
+    </Modal>
   )
 }
